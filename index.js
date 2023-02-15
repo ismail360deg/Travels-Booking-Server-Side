@@ -47,9 +47,9 @@ app.use('/booking', bookingRoute);
 
 
 
-// app.get('/', (req,res) =>{
-//     res.status(200).send('route is working')
-// })
+app.get('/', (req,res) =>{
+    res.status(200).send('route is working')
+})
 
 app.listen(port,() => {
     connect();
