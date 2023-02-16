@@ -1,8 +1,10 @@
+// import require('dotenv').config();
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+
 
 import tourRoute from './routes/tours.js';
 import userRoute from './routes/users.js';
@@ -22,7 +24,7 @@ const corsOptions = {
 mongoose.set('strictQuery', false);
 const connect = async () => {
     try {
-         mongoose.connect(process.env.MONGO_URI,{
+        await mongoose.connect(process.env.MONGO_URI,{
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
